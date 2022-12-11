@@ -1,0 +1,48 @@
+<%- include('../../front/header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <%- include('../../admin/adminsidebar.ejs') %>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>Category View</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <a href="/admin/createcategory" class="btn a">Add Category</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <!-- <th>Action</th> -->
+                            </tr>
+                            
+                                <tr>
+                                    <td><%= viewdata._id %></td>
+                                    <td><%= viewdata.title %></td>
+                                    <td><%= viewdata.description %></td>
+                                    <td><%= viewdata.name %></td>
+                                    <td><%= viewdata.email %></td>
+                                 </tr>
+                      
+                            
+                        
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../../front/footer.ejs') %>

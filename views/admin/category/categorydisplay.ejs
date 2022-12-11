@@ -1,0 +1,55 @@
+<%- include('../../front/header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <%- include('../../admin/adminsidebar.ejs') %>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>Categories</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <a href="/admin/createcategory" class="btn a">Add Category</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                            <!-- forEach loop [data forEach loop m ayga ] -->
+                            <% d.forEach((item)=>{ %>
+                                <tr>
+                                    <td><%= item._id %></td>
+                                    <td><%= item.title %></td>
+                                    <td><%= item.description %></td>
+                                    <td><%= item.name %></td>
+                                    <td><%= item.email %></td>
+                                    
+                                    <td>
+                                        <a href="/admin/category_view/<%= item._id %>" class="btn btn-info btn-sm">View</a>
+                                        <a href="/admin/category_edit/<%= item._id %>" class="btn btn-success btn-sm">Edit</a>
+                                        <a href="/admin/category_delete/<%= item._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                           <% }) %>
+                            
+                        
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../../front/footer.ejs') %>
